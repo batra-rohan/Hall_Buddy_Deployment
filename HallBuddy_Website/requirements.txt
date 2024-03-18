@@ -3,3 +3,4 @@ python_dateutil
 pytz
 django-razorpay
 django-environ
+dj_database_url
