@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -113,6 +113,13 @@ WSGI_APPLICATION = 'HallBuddy_Website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+DATABASES = {
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://dbname_w0vf_user:FVJWQBZgGcDGDsJQ7woe6RxF4wLB1UiW@dpg-cns82an109ks73e3m2mg-a/dbname_w0vf',
+        conn_max_age=600
+    )
+}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
